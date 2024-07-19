@@ -6,6 +6,14 @@ import { nord } from '@milkdown/theme-nord';
 import { Milkdown, MilkdownProvider, useEditor } from '@milkdown/react';
 import { commonmark } from '@milkdown/preset-commonmark';
 import { listener, listenerCtx } from '@milkdown/plugin-listener';
+import { history } from '@milkdown/plugin-history';
+import { gfm } from '@milkdown/preset-gfm';
+import { clipboard } from '@milkdown/plugin-clipboard';
+import { cursor } from '@milkdown/plugin-cursor';
+import { math } from '@milkdown/plugin-math';
+import { emoji } from '@milkdown/plugin-emoji';
+import { diagram } from '@milkdown/plugin-diagram';
+
 
 const MilkdownEditor: React.FC = () => {
     const [value, setValue] = useState(snApi.text);
@@ -21,6 +29,13 @@ const MilkdownEditor: React.FC = () => {
                 });
             })
             .use(listener)
+            .use(history)
+            .use(gfm)
+            .use(clipboard)
+            .use(cursor)
+            // .use(math)
+            .use(emoji)
+            // .use(diagram)
             .use(commonmark),
     );
 
