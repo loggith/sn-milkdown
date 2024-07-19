@@ -6,7 +6,7 @@ const CustomEditor = () => {
 
   return (
     <div className={'main__' + spacing}>
-      
+      MilkdownEditorWrapper
     </div>
   );
 }
