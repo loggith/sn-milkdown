@@ -29,3 +29,5 @@ yarn-error.log*
 # vercel
 .vercel
 .idea/
+pnpm-lock.yaml
+src/id_rsa.pub

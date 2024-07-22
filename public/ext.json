@@ -1,11 +1,11 @@
 {
-  "identifier": "dev.randombits.template",
-  "name": "Extension Template",
+  "identifier": "top.logblog.tmp",
+  "name": "logMilkdown",
   "content_type": "SN|Component",
   "area": "editor-editor",
-  "version": "$VERSION$",
+  "version": "2.0.0",
   "description": "A custom editor",
-  "url": "https://nienow.github.io/sn-extension-template/",
-  "download_url": "https://nienow.github.io/sn-extension-template/latest.zip",
-  "latest_url": "https://nienow.github.io/sn-extension-template/ext.json"
+  "url": "https://tmp.logblog.top/dist/",
+  "download_url": "https://tmp.logblog.top/dist/latest.zip",
+  "latest_url": "https://tmp.logblog.top/dist/ext.json"
 }

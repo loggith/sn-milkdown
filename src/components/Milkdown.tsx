@@ -17,24 +17,26 @@ import { diagram } from '@milkdown/plugin-diagram';
 
 const MilkdownEditor: React.FC = () => {
     const [value, setValue] = useState(snApi.text);
+    console.log(value)
     const { get } = useEditor((root) =>
         Editor.make()
             .config(nord)
             .config((ctx) => {
                 ctx.set(rootCtx, root);
-                ctx.set(defaultValueCtx, value);
-                ctx.get(listenerCtx).markdownUpdated((ctx, markdown, prevMarkdown) => {
-                    setValue(markdown);
-                    snApi.text = markdown;
-                });
+                // ctx.set(defaultValueCtx, value || "Hello World!");
+                // ctx.set(defaultValueCtx, "Hello World!");
+                // ctx.get(listenerCtx).markdownUpdated((ctx, markdown, prevMarkdown) => {
+                //     setValue(markdown);
+                //     snApi.text = markdown;
+                // });
             })
-            .use(listener)
-            .use(history)
-            .use(gfm)
-            .use(clipboard)
-            .use(cursor)
+            // .use(listener)
+            // .use(history)
+            // .use(gfm)
+            // .use(clipboard)
+            // .use(cursor)
             // .use(math)
-            .use(emoji)
+            // .use(emoji)
             // .use(diagram)
             .use(commonmark),
     );

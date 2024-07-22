@@ -10,7 +10,7 @@ const mock = new MockStandardNotes(TEST_DATA[0], () => {
 });
 
 const DemoApp = () => {
-  const iframeRef = useRef<HTMLIFrameElement>();
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [selected, setSelected] = useState(0);
   const [disabled, setDisabled] = useState(false);
   const [theme, setTheme] = useState('light');
@@ -36,7 +36,9 @@ const DemoApp = () => {
   };
 
   const onFrameLoad = () => {
-    mock.onReady(iframeRef.current.contentWindow);
+    if (iframeRef.current) {
+      mock.onReady(iframeRef.current.contentWindow);
+    }
   };
   return (
     <div className="demo">

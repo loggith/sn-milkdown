@@ -53,7 +53,8 @@ module.exports = (env, argv) => ({
       'node_modules',
       'src'
     ],
-    extensions: ['.tsx', '.ts', '.js'],
+    // aliasFields: ['browser'],
+    extensions: ['.tsx', '.ts', '.js', '.json'],
     alias: {
       react: "preact/compat",
       'react-dom': "preact/compat",
