@@ -24,21 +24,22 @@ const MilkdownEditor: React.FC = () => {
             .config((ctx) => {
                 ctx.set(rootCtx, root);
                 // ctx.set(defaultValueCtx, value || "Hello World!");
-                // ctx.set(defaultValueCtx, "Hello World!");
-                // ctx.get(listenerCtx).markdownUpdated((ctx, markdown, prevMarkdown) => {
-                //     setValue(markdown);
-                //     snApi.text = markdown;
-                // });
+                ctx.set(defaultValueCtx, "Hello World!");
+                ctx.get(listenerCtx).markdownUpdated((ctx, markdown, prevMarkdown) => {
+                    setValue(markdown);
+                    snApi.text = markdown;
+                });
             })
-            // .use(listener)
-            // .use(history)
-            // .use(gfm)
-            // .use(clipboard)
-            // .use(cursor)
+            .use(commonmark)
+            .use(history)
+            .use(gfm)
+            .use(clipboard)
+            .use(cursor)
             // .use(math)
             // .use(emoji)
             // .use(diagram)
-            .use(commonmark),
+            .use(listener)
+        ,
     );
 
     return <Milkdown />;
